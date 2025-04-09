@@ -10,6 +10,10 @@ public class DefaultCountingOutRhymer {
 
     private int total = EMPTY;
 
+    /**
+     *
+     * gettery
+     */
     public static int getCAPACITY() {
         return CAPACITY;
     }
@@ -25,26 +29,48 @@ public class DefaultCountingOutRhymer {
     public static int getRETURN() {
         return RETURN;
     }
+    public int[] getNumbers() {
+        return numbers;
+    }
 
+    /**
+     *
+     * dodanie przedmiotu na stos
+     */
     public void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
     }
-
+    /**
+     *
+     * Zwraca: true, jeśli nie ma żadnych elementów (czyli total == -1), w przeciwnym razie false
+     */
     public boolean callCheck() {
         return total == EMPTY;
     }
 
+    /**
+     *
+     * Zwraca: true, jeśli liczba elementów osiągnęła maksymalną wartość (total == 11), inaczej false.
+     */
     public boolean isFull() {
         return total == MAX;
     }
 
+    /**
+     *
+     *Podgląda ostatni element na stosie bez usuwania go
+     */
     protected int peekaboo() {
         if (callCheck())
             return RETURN;
         return numbers[total];
     }
 
+    /**
+     *
+     *Podgląda ostatni element na stosie bez usuwania go
+     */
     public int countOut() {
         if (callCheck())
             return RETURN;
@@ -52,7 +78,5 @@ public class DefaultCountingOutRhymer {
     }
     public int getTotal(){return total;}
 
-    public int[] getNumbers() {
-        return numbers;
-    }
+
 }
