@@ -10,6 +10,22 @@ public class DefaultCountingOutRhymer {
 
     private int total = EMPTY;
 
+    public static int getCAPACITY() {
+        return CAPACITY;
+    }
+
+    public static int getMAX() {
+        return MAX;
+    }
+
+    public static int getEMPTY() {
+        return EMPTY;
+    }
+
+    public static int getRETURN() {
+        return RETURN;
+    }
+
     public void countIn(int in) {
         if (!isFull())
             numbers[++total] = in;
@@ -35,4 +51,12 @@ public class DefaultCountingOutRhymer {
         return numbers[total--];
     }
     public int getTotal(){return total;}
+
+    public int[] getNumbers() {
+        return numbers;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
 }
