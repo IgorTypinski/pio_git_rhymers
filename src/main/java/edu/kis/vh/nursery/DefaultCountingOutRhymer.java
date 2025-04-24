@@ -3,7 +3,6 @@ package edu.kis.vh.nursery;
 public class DefaultCountingOutRhymer {
 
     private static final int CAPACITY = 12;
-    private static final int MAX = 11;
     private static final int STACK_EMPTY_INDEX = -1;
     private static final int EMPTY_STACK_VALUE = -1;
     private final int[] numbers = new int[CAPACITY];
@@ -16,10 +15,6 @@ public class DefaultCountingOutRhymer {
      */
     public static int getCAPACITY() {
         return CAPACITY;
-    }
-
-    public static int getMAX() {
-        return MAX;
     }
 
     public static int getEMPTY() {
@@ -54,7 +49,7 @@ public class DefaultCountingOutRhymer {
      * Zwraca: true, jeśli liczba elementów osiągnęła maksymalną wartość (total == 11), inaczej false.
      */
     public boolean isFull() {
-        return total == MAX;
+        return total == CAPACITY - 1;
     }
 
     /**
