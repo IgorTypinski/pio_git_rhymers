@@ -49,6 +49,7 @@ public class DefaultCountingOutRhymer {
      * Zwraca: true, jeśli liczba elementów osiągnęła maksymalną wartość (total == 11), inaczej false.
      */
     public boolean isFull() {
+
         return total == CAPACITY - 1;
     }
 
