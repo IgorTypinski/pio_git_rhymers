@@ -4,11 +4,11 @@ public class DefaultCountingOutRhymer {
 
     private static final int CAPACITY = 12;
     private static final int MAX = 11;
-    private static final int EMPTY = -1;
-    private static final int RETURN = -1;
+    private static final int STACK_EMPTY_INDEX = -1;
+    private static final int EMPTY_STACK_VALUE = -1;
     private final int[] numbers = new int[CAPACITY];
 
-    private int total = EMPTY;
+    private int total = STACK_EMPTY_INDEX;
 
     /**
      *
@@ -23,11 +23,11 @@ public class DefaultCountingOutRhymer {
     }
 
     public static int getEMPTY() {
-        return EMPTY;
+        return STACK_EMPTY_INDEX;
     }
 
     public static int getRETURN() {
-        return RETURN;
+        return EMPTY_STACK_VALUE;
     }
     public int[] getNumbers() {
         return numbers;
@@ -46,7 +46,7 @@ public class DefaultCountingOutRhymer {
      * Zwraca: true, jeśli nie ma żadnych elementów (czyli total == -1), w przeciwnym razie false
      */
     public boolean callCheck() {
-        return total == EMPTY;
+        return total == STACK_EMPTY_INDEX;
     }
 
     /**
@@ -63,7 +63,7 @@ public class DefaultCountingOutRhymer {
      */
     protected int peekaboo() {
         if (callCheck())
-            return RETURN;
+            return EMPTY_STACK_VALUE;
         return numbers[total];
     }
 
@@ -73,7 +73,7 @@ public class DefaultCountingOutRhymer {
      */
     public int countOut() {
         if (callCheck())
-            return RETURN;
+            return EMPTY_STACK_VALUE;
         return numbers[total--];
     }
     public int getTotal(){return total;}
