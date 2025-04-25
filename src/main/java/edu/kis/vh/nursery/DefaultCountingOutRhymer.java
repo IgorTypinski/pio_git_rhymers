@@ -21,12 +21,6 @@ public class DefaultCountingOutRhymer {
         return STACK_EMPTY_INDEX;
     }
 
-    public static int getRETURN() {
-        return EMPTY_STACK_VALUE;
-    }
-    public int[] getNumbers() {
-        return numbers;
-    }
 
     /**
      *
